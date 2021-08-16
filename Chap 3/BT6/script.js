@@ -1,29 +1,29 @@
 //row 1
 var result = 0;
 var number1 = 0;
-var number2 =0
+var number2 = 0
 var calculator = "";
 var count = 0;
 //display number to sreeen
-function updateSreen () {
+function updateSreen() {
     const screen = document.getElementById("sc");
     screen.textContent = result;
 }
 //calaculator
-function calculator_result () {
-    if(calculator === "") {
-        return;
+function calculator_result() {
+    if (calculator === "") {
+        return result;
     }
     switch (calculator) {
-        case "%": 
+        case "%":
             return number1 % number2;
-        case "+": 
+        case "+":
             return number1 + number2;
-        case "-": 
+        case "-":
             return number1 - number2;
-        case "*": 
+        case "*":
             return number1 * number2;
-        case "/": 
+        case "/":
             if (number2 === 0) {
                 return "Error"
             }
@@ -45,7 +45,7 @@ const k2 = document.getElementById("2");
 k2.onclick = () => {
     //delete 1 element
     if (result !== 0) {
-        result = parseInt(result/10);
+        result = parseInt(result / 10);
         updateSreen();
         if (number2 !== 0) {
             number2 = result;
@@ -61,7 +61,9 @@ k2.onclick = () => {
 const k3 = document.getElementById("3");
 k3.onclick = () => {
     //mod
-    if(result !== 0) {
+    if (result !== 0) {
+        //convert result
+        result = (typeof(result) === "string") ? parseFloat(result) : result;
         //entered first agument
         calculator = "%";
         count = 0;
@@ -78,7 +80,9 @@ k3.onclick = () => {
 const k4 = document.getElementById("4");
 k4.onclick = () => {
     //add
-    if(result !== 0) {
+    if (result !== 0) {
+        //convert result
+        result = (typeof(result) === "string") ? parseFloat(result) : result;
         //entered first agument
         calculator = "+";
         count = 0;
@@ -95,10 +99,31 @@ k4.onclick = () => {
 const k5 = document.getElementById("5");
 k5.onclick = () => {
     //7
-    if(number1 === 0 || calculator === "") {
-        result = number1 = 7;
+    //float
+    if(typeof(result) === "string") {
+        if (result.indexOf(".") !== -1) {
+            if (number1 === 0 || calculator === "") {
+                let number = result + "7";
+                result = number;
+                number = parseFloat(number);
+                number1 = number;
+            } else {
+                let number = result + "7";
+                result = number;
+                number = parseFloat(number);
+                number2 = number;
+            }
+            updateSreen();
+            return;
+        }
+    }
+    //integer
+    if (number1 === 0 || calculator === "") {
+        let number = number1 * 10;
+        result = number1 = number + 7;
     } else {
-        result = number2 = 7;
+        let number = number2 * 10;
+        result = number2 = number + 7;
     }
     updateSreen();
 }
@@ -106,10 +131,31 @@ k5.onclick = () => {
 const k6 = document.getElementById("6");
 k6.onclick = () => {
     //8
-    if(number1 === 0 || calculator === "") {
-        result = number1 = 8;
+    //float
+    if(typeof(result) === "string") {
+        if (result.indexOf(".") !== -1) {
+            if (number1 === 0 || calculator === "") {
+                let number = result + "8";
+                result = number;
+                number = parseFloat(number);
+                number1 = number;
+            } else {
+                let number = result + "8";
+                result = number;
+                number = parseFloat(number);
+                number2 = number;
+            }
+            updateSreen();
+            return;
+        }
+    }
+    //integer
+    if (number1 === 0 || calculator === "") {
+        let number = number1 * 10;
+        result = number1 = number + 8;
     } else {
-        result = number2 = 8;
+        let number = number2 * 10;
+        result = number2 = number + 8;
     }
     updateSreen();
 }
@@ -117,10 +163,31 @@ k6.onclick = () => {
 const k7 = document.getElementById("7");
 k7.onclick = () => {
     //9
-    if(number1 === 0 || calculator === "") {
-        result = number1 = 9;
+    //float
+    if(typeof(result) === "string") {
+        if (result.indexOf(".") !== -1) {
+            if (number1 === 0 || calculator === "") {
+                let number = result + "9";
+                result = number;
+                number = parseFloat(number);
+                number1 = number;
+            } else {
+                let number = result + "9";
+                result = number;
+                number = parseFloat(number);
+                number2 = number;
+            }
+            updateSreen();
+            return;
+        }
+    }
+    //integer
+    if (number1 === 0 || calculator === "") {
+        let number = number1 * 10;
+        result = number1 = number + 9;
     } else {
-        result = number2 = 9;
+        let number = number2 * 10;
+        result = number2 = number + 9;
     }
     updateSreen();
 }
@@ -128,7 +195,9 @@ k7.onclick = () => {
 const k8 = document.getElementById("8");
 k8.onclick = () => {
     //sub
-    if(result !== 0) {
+    if (result !== 0) {
+        //convert result
+        result = (typeof(result) === "string") ? parseFloat(result) : result;
         //entered first agument
         calculator = "-";
         count = 0;
@@ -145,10 +214,31 @@ k8.onclick = () => {
 const k9 = document.getElementById("9");
 k9.onclick = () => {
     //4
-    if(number1 === 0 || calculator === "") {
-        result = number1 = 4;
+    //float
+    if(typeof(result) === "string") {
+        if (result.indexOf(".") !== -1) {
+            if (number1 === 0 || calculator === "") {
+                let number = result + "4";
+                result = number;
+                number = parseFloat(number);
+                number1 = number;
+            } else {
+                let number = result + "4";
+                result = number;
+                number = parseFloat(number);
+                number2 = number;
+            }
+            updateSreen();
+            return;
+        }
+    }
+    //integer
+    if (number1 === 0 || calculator === "") {
+        let number = number1 * 10;
+        result = number1 = number + 4;
     } else {
-        result = number2 = 4;
+        let number = number2 * 10;
+        result = number2 = number + 4;
     }
     updateSreen();
 }
@@ -156,10 +246,31 @@ k9.onclick = () => {
 const k10 = document.getElementById("10");
 k10.onclick = () => {
     //5
-    if(number1 === 0 || calculator === "") {
-        result = number1 = 5;
+    //float
+    if(typeof(result) === "string") {
+        if (result.indexOf(".") !== -1) {
+            if (number1 === 0 || calculator === "") {
+                let number = result + "5";
+                result = number;
+                number = parseFloat(number);
+                number1 = number;
+            } else {
+                let number = result + "5";
+                result = number;
+                number = parseFloat(number);
+                number2 = number;
+            }
+            updateSreen();
+            return;
+        }
+    }
+    //integer
+    if (number1 === 0 || calculator === "") {
+        let number = number1 * 10;
+        result = number1 = number + 5;
     } else {
-        result = number2 = 5;
+        let number = number2 * 10;
+        result = number2 = number + 5;
     }
     updateSreen();
 }
@@ -167,10 +278,31 @@ k10.onclick = () => {
 const k11 = document.getElementById("11");
 k11.onclick = () => {
     //6
-    if(number1 === 0 || calculator === "") {
-        result = number1 = 6;
+    //float
+    if(typeof(result) === "string") {
+        if (result.indexOf(".") !== -1) {
+            if (number1 === 0 || calculator === "") {
+                let number = result + "6";
+                result = number;
+                number = parseFloat(number);
+                number1 = number;
+            } else {
+                let number = result + "6";
+                result = number;
+                number = parseFloat(number);
+                number2 = number;
+            }
+            updateSreen();
+            return;
+        }
+    }
+    //integer
+    if (number1 === 0 || calculator === "") {
+        let number = number1 * 10;
+        result = number1 = number + 6;
     } else {
-        result = number2 = 6;
+        let number = number2 * 10;
+        result = number2 = number + 6;
     }
     updateSreen();
 }
@@ -178,7 +310,9 @@ k11.onclick = () => {
 const k12 = document.getElementById("12");
 k12.onclick = () => {
     //mul
-    if(result !== 0) {
+    if (result !== 0) {
+        //convert result
+        result = (typeof(result) === "string") ? parseFloat(result) : result;
         //entered first agument
         calculator = "*";
         count = 0;
@@ -195,10 +329,31 @@ k12.onclick = () => {
 const k13 = document.getElementById("13");
 k13.onclick = () => {
     //1
-    if(number1 === 0 || calculator === "") {
-        result = number1 = 1;
+    //float
+    if(typeof(result) === "string") {
+        if (result.indexOf(".") !== -1) {
+            if (number1 === 0 || calculator === "") {
+                let number = result + "1";
+                result = number;
+                number = parseFloat(number);
+                number1 = number;
+            } else {
+                let number = result + "1";
+                result = number;
+                number = parseFloat(number);
+                number2 = number;
+            }
+            updateSreen();
+            return;
+        }
+    }
+    //integer
+    if (number1 === 0 || calculator === "") {
+        let number = number1 * 10;
+        result = number1 = number + 1;
     } else {
-        result = number2 = 1;
+        let number = number2 * 10;
+        result = number2 = number + 1;
     }
     updateSreen();
 }
@@ -206,10 +361,31 @@ k13.onclick = () => {
 const k14 = document.getElementById("14");
 k14.onclick = () => {
     //2
-    if(number1 === 0 || calculator === "") {
-        result = number1 = 2;
+    //float
+    if(typeof(result) === "string") {
+        if (result.indexOf(".") !== -1) {
+            if (number1 === 0 || calculator === "") {
+                let number = result + "2";
+                result = number;
+                number = parseFloat(number);
+                number1 = number;
+            } else {
+                let number = result + "2";
+                result = number;
+                number = parseFloat(number);
+                number2 = number;
+            }
+            updateSreen();
+            return;
+        }
+    }
+    //integer
+    if (number1 === 0 || calculator === "") {
+        let number = number1 * 10;
+        result = number1 = number + 2;
     } else {
-        result = number2 = 2;
+        let number = number2 * 10;
+        result = number2 = number + 2;
     }
     updateSreen();
 }
@@ -217,10 +393,31 @@ k14.onclick = () => {
 const k15 = document.getElementById("15");
 k15.onclick = () => {
     //3
-    if(number1 === 0 || calculator === "") {
-        result = number1 = 3;
+    //float
+    if(typeof(result) === "string") {
+        if (result.indexOf(".") !== -1) {
+            if (number1 === 0 || calculator === "") {
+                let number = result + "3";
+                result = number;
+                number = parseFloat(number);
+                number1 = number;
+            } else {
+                let number = result + "3";
+                result = number;
+                number = parseFloat(number);
+                number2 = number;
+            }
+            updateSreen();
+            return;
+        }
+    }
+    //integer
+    if (number1 === 0 || calculator === "") {
+        let number = number1 * 10;
+        result = number1 = number + 3;
     } else {
-        result = number2 = 3;
+        let number = number2 * 10;
+        result = number2 = number + 3;
     }
     updateSreen();
 }
@@ -228,7 +425,9 @@ k15.onclick = () => {
 const k16 = document.getElementById("16");
 k16.onclick = () => {
     //div
-    if(result !== 0) {
+    if (result !== 0) {
+        //convert result
+        result = (typeof(result) === "string") ? parseFloat(result) : result;
         //entered first agument
         calculator = "/";
         count = 0;
@@ -245,7 +444,26 @@ k16.onclick = () => {
 const k17 = document.getElementById("17");
 k17.onclick = () => {
     //0
-    if(number1 === 0 || calculator === "") {
+    //float
+    if(typeof(result) === "string") {
+        if (result.indexOf(".") !== -1) {
+            if (number1 === 0 || calculator === "") {
+                let number = result + "0";
+                result = number;
+                number = parseFloat(number);
+                number1 = number;
+            } else {
+                let number = result + "0";
+                result = number;
+                number = parseFloat(number);
+                number2 = number;
+            }
+            updateSreen();
+            return;
+        }
+    }
+    //integer
+    if (number1 === 0 || calculator === "") {
         result = number1 = 0;
     } else {
         result = number2 = 0;
@@ -257,17 +475,30 @@ k17.onclick = () => {
 const k18 = document.getElementById("18");
 k18.onclick = () => {
     //swap +/- 
+    if (number2 !== 0) {
+        result = number2 = -number2;
+        updateSreen();
+        return;
+    }
+    if (number1 !== 0) {
+        result = number1 = -number1;
+        updateSreen();
+        return;
+    }
 }
 
 const k19 = document.getElementById("19");
 k19.onclick = () => {
     //float
+    result = result + ".";
+    updateSreen();
+    return;
 }
 
 const k20 = document.getElementById("20");
 k20.onclick = () => {
     //calculator
-    if (count === 0 ) {
+    if (count === 0) {
         result = calculator_result();
         updateSreen();
         number2 = 0;
