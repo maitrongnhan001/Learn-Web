@@ -1,0 +1,230 @@
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: hsl(0, 17%, 93%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.row {
+    display: flex;
+}
+
+.logo {
+    background-color: white;
+    width: 29%;
+    height: 120px;
+    margin: 10px 0 10px 1%;
+    border: 1px solid;
+}
+
+.bonner {
+    background-color: white;
+    width: 68%;
+    height: 120px;
+    margin: 10px 1% 10px 1%;
+    border: 1px solid;
+}
+
+.menu {
+    background-color: white;
+    width: 98%;
+    margin: 0 auto;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
+
+.menu ul {
+    width: 35%;
+    display: flex;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    width: 25%;
+    color: rgb(63, 125, 206);
+    line-height: 50px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.menu .search {
+    margin: 0 0 0 auto;
+    width: 20%;
+    height: 35px;
+    margin-top: 7px;
+    margin-right: 10px;
+    position: relative;
+    z-index: 0;
+}
+
+.menu .search input {
+    height: 35px;
+    width: 85%;
+    border-radius: 40px;
+    padding-left: 30px;
+    border: 0.5px solid;
+    color: #b4b1b1;
+}
+
+.menu .search svg {
+    position: relative;
+    z-index: 1;
+    left: 1%;
+    bottom: 30px;
+}
+
+.main {
+    width: 98%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.col-1 {
+    width: 10%;
+}
+
+.col-1 .element-1 {
+    background-color: white;
+    height: 200px;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
+
+.col-1 .element-1 ul {
+    padding: 10px 0 0 10px;
+    margin: 0;
+}
+
+.col-1 .element-1 ul li {
+    list-style-type: none;
+    padding-bottom: 10px;
+}
+
+.col-1 .element-2 {
+    background-color: white;
+    height: 280px;
+    border: 1px solid;
+}
+
+.col-2 {
+    width: 70%;
+}
+
+.col-2 .hot-new {
+    background-color: white;
+    width: 49%;
+    height: 130px;
+    margin-left: 1%;
+    border: 1px solid;
+}
+
+.col-2 .photo-side {
+    background-color: white;
+    width: 49%;
+    height: 130px;
+    margin-left: 1%;
+    border: 1px solid;
+}
+
+.col-2 .photo-side .photo-1 {
+    background-color: white;
+    width: 69%;
+    height: 69%;
+    border: 1px solid;
+    margin: 1% 0 0 1%;
+    position: relative;
+    z-index: 1;
+}
+
+.col-2 .photo-side .photo-2 {
+    background-color: white;
+    width: 69%;
+    height: 69%;
+    border: 1px solid;
+    margin: 1% 0 0 1%;
+    position: relative;
+    z-index: 2;
+    left: 14%;
+    bottom: 65%;
+}
+
+.col-2 .photo-side .photo-3 {
+    background-color: white;
+    width: 69%;
+    height: 69%;
+    border: 1px solid;
+    margin: 1% 0 0 1%;
+    position: relative;
+    z-index: 3;
+    left: 28%;
+    bottom: 128%;
+}
+
+.col-2 .new {
+    background-color: white;
+    width: 31.5%;
+    height: 200px;
+    border: 1px solid;
+    margin: 10px 0 0 auto
+}
+
+.col-3 {
+    width: 19%;
+    background-color: white;
+    margin: 0 0 0 auto;
+    border: 1px solid;
+}
+
+.col-3 .calendar {
+    background-color: white;
+    width: 90%;
+    height: 200px;
+    border: 1px solid;
+    margin: 10px auto;
+}
+
+.col-3 .graph {
+    background-color: white;
+    width: 90%;
+    height: 200px;
+    border: 1px solid;
+    margin: 10px auto;
+}
+
+.col-3 .map {
+    background-color: white;
+    width: 90%;
+    height: 200px;
+    border: 1px solid;
+    margin: 10px auto;
+}
+
+footer {
+    background-color: white;
+    width: 98%;
+    margin: 0 1% 10px auto;
+    border: 1px solid;
+}
+
+footer p {
+    margin-left: 1%;
+}
+
+footer ul {
+    width: 35%;
+    display: flex;
+    height: 50px;
+    margin: 0 0 0 auto;
+    padding: 0;
+}
+
+footer li {
+    width: 25%;
+    color: rgb(63, 125, 206);
+    line-height: 50px;
+    list-style-type: none;
+    text-align: center;
+}
