@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function display_result() {
+            var result;
+            //get value each element
+            //get name
+            result = document.forms[0].name.value;
+
+            //get sex
+            const SexElement = document.forms[0].sex;
+            for (var i = 0; i < SexElement.length; i++) {
+                if (SexElement[i].checked) {
+                    result += " (" + SexElement[i].value + ")";
+                }
+            }
+
+            //get location
+            result += "<br>- TP yêu thích: ";
+            const location = document.forms[0].location;
+            for (var i = 0; i < location.length; i++) {
+                if (location[i].checked) {
+                    result += location[i].value + " | ";
+                }
+            }
+
+            //get favorte city
+            const favorite_city = document.forms[0].favorite_city;
+            const item = favorite_city.selectedIndex;
+            result += "<br>- TP yếu thích nhất: " + favorite_city[item].value;
+
+            //display result
+            document.getElementById("result").innerHTML = result;
+        }
+
+        function add_city() {
+            let nameCity = prompt("Nhập tên thành phố", "");
+            if (nameCity.length !== 0) {
+                //check name city is exist?
+                const location = document.forms[0].location;
+                for (var i = 0; i < location.length; i++) {
+                    if (nameCity === location[i].value) {
+                        alert("Thành phố đã tồn tại.");
+                        return;
+                    }
+                }
+
+                //add city to location
+                const elementLocation = document.createElement("input");
+                elementLocation.setAttribute("type", "checkbox");
+                elementLocation.setAttribute("name", "location");
+                elementLocation.setAttribute("value", nameCity);
+                document.getElementById("location").appendChild(elementLocation);
+
+                const textLocation = document.createElement("span");
+                const  text = document.createTextNode(nameCity);
+                textLocation.appendChild(text);
+                document.getElementById("location").appendChild(textLocation);
+
+                const tabBr = document.createElement("br");
+                document.getElementById("location").appendChild(tabBr);
+
+                //add city to favorate city
+                let elementFavorite_City = document.createElement("option");
+                elementFavorite_City.setAttribute("value", nameCity);
+                const textFavorite_City = document.createTextNode(nameCity);
+                elementFavorite_City.appendChild(textFavorite_City);
+                document.getElementById("favorite_city").appendChild(elementFavorite_City);
+            } else {
+                alert("Chưa nhập tên thành phố,");
+            }
+        }
+
+        function delete_city() {
+            let nameCity = prompt("Nhập tên thành phố", "");
+            if (nameCity.length !== 0) {
+                //check name city is exist?
+
+                const ListLocation = document.getElementById("location");
+                //action location have more than 1 element
+                for (var i = 0; i < ListLocation.children.length; i++) {
+                    if (nameCity === ListLocation.children[i].value) {
+                        //delete city in location
+                        let index = i; //because location have 3 elements on 1 row
+
+                        //delete tab input
+                        ListLocation.removeChild(ListLocation.children[index]);
+                        //delete text
+                        ListLocation.removeChild(ListLocation.children[index]);
+                        //delete tab br
+                        ListLocation.removeChild(ListLocation.children[index]);
+                        //delete city in favorite city
+
+                        
+                        return;
+                    }
+                }
+
+                alert("Thành phố không tồn tại.");
+
+            } else {
+                alert("Chưa nhập tên thành phố.");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 align="center">BÌNH CHON THÀNH PHỐ ĐƯỢC YÊU THÍCH</h1>
+
+    <br>
+
+    <form action="#">
+        Ho tên: <input type="text" name="name"><br>
+
+        Phái:
+        <input type="radio" name="sex" value="Nam" checked>Nam
+        <input type="radio" name="sex" value="Nữ">Nữ<br>
+
+        Chọn địa điểm: <br>
+        <div id="location">
+            <input type="checkbox" name='location' value="Hà Nội"><span>Hà Nội</span><br>
+            <input type="checkbox" name='location' value="Nha Trang"><span>Nha Trang</span><br>
+            <input type="checkbox" name='location' value="TP HCM"><span>TP HCM</span><br>
+            <input type="checkbox" name='location' value="Cần Thơ"><span>Cần Thơ</span><br>
+        </div>
+
+        Thành phố được yêu thích nhất:
+        <select name="favorite_city" id="favorite_city">
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="Hà Nội">Nha Trang</option>
+            <option value="Hà Nội">TP HCM</option>
+            <option value="Hà Nội">Cần Thơ</option>
+        </select>
+        <br>
+        <br>
+        <input type="button" name="submit" value="Bình chọn" onclick="display_result()">
+        <input type="button" name="addCity" value="Thêm thành phố" onclick="add_city()">
+        <input type="button" name="deleteCity" value="Xoá thành phố" onclick="delete_city()">
+        <br><br>
+        Kết quả:
+        <br><br>
+        <p id="result"></p>
+    </form>
+</body>
+
+</html>
