@@ -12,10 +12,14 @@
     height: 200px;
     position: relative;
     left: 30px;
-    bottom: 30px;
+    bottom: 200px;
     z-index: 2;
 }
-p {
+
+#p1 {
     color: purple;
-    visibility: hidden;
+}
+
+#p2 {
+    color: white;
 }
