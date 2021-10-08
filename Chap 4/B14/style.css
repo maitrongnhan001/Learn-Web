@@ -21,6 +21,10 @@ nav p {
     top: 10px;
 }
 
+li a{
+    text-decoration: none;
+}
+
 .menu {
     background-color: white;
     width: 100%;
@@ -35,7 +39,6 @@ nav p {
 
 .menu ul li{
     background-color: orange;
-    color: white;
     text-align: center;
     line-height: 5vh;
     width: 11%;
@@ -44,8 +47,16 @@ nav p {
     margin: 0 2px 0 0;
 }
 
+.menu ul li a{
+    color: white;
+}
+
 .menu ul li:last-child{
     margin: 0 0 0 0;
+}
+
+.menu ul li:hover{
+    background-color: rgb(117, 77, 3);
 }
 
 .main {
@@ -69,7 +80,6 @@ nav p {
 }
 
 .col-1 ul {
-    background-color: brown;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -81,9 +91,16 @@ nav p {
     height: 38px;
     list-style-type: none;
     line-height: 38px;
-    margin-bottom: 1px;
-    color: brown;
+    border-bottom: 1px solid brown;
     padding-left: 10px;
+}
+
+.col-1 ul li a{
+    color: brown;
+}
+
+.col-1 ul li:hover{
+    background-color: rgb(136, 136, 12);
 }
 
 .col-2 {
