@@ -32,14 +32,15 @@ function CheckEmail (Email) {
 }
 
 function CheckPhoneNumber (PhoneNumber) {
-    if (/^\d{10,12}$/.test(PhoneNumber)) {
+    if (/^\d{10,12}$/.test(PhoneNumber) && PhoneNumber.length === 12) {
         return true;
     }
     return false;
 }
 
 const element = document.getElementById("sm");
-element.onclick = () => {
+element.onclick = (e) => {
+    e.preventDefault();
     var result = true;
     const UserName = document.Form.UserName.value;
     result = result && checkUserName(UserName);
@@ -53,8 +54,10 @@ element.onclick = () => {
     const PhoneNumber = document.Form.PhoneNumber.value;
     result = result && CheckPhoneNumber(PhoneNumber);
     if (result) {
-        console.log("OK");
+        document.getElementById('nofi').style.color = "green";
+        document.getElementById('nofi').textContent = "Ok, information is valid";
     } else {
-        console.log("NOT OK");
+        document.getElementById('nofi').style.color = "red";
+        document.getElementById('nofi').textContent = "information is invalid";
     }
 }
