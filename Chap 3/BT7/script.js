@@ -13,7 +13,7 @@ function checkPassword (Password, UserName) {
         if (Password.search(/[a-z]/) !== -1 && Password.search(/[A-Z]/) !== -1) {
             if (Password.search(/[0-9]/) !== -1) {
                 const count = Password.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g).length;
-                if (count > 1) {
+                if (count >= 1) {
                     if (Password.search(UserName) === -1) {
                         return true;
                     }
